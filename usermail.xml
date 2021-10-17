@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ @package   plg_radicalform_usermail
+  ~ @version   1.0.0
+  ~ @author    Dmitriy Vasyukov - https://fictionlabs.ru
+  ~ @copyright Copyright (c) 2021 Fictionlabs. All rights reserved.
+  ~ @license   GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+  ~ @link      https://fictionlabs.ru/
+  -->
+
+<extension type="plugin" version="3.8" group="radicalform" method="upgrade">
+	<name>PLG_RADICALFORM_USERMAIL</name>
+	<creationDate>July 2021</creationDate>
+	<author>Dmitriy Vasyukov</author>
+	<copyright>Copyright (C) 2005 - 2021 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@fictionlabs.ru</authorEmail>
+	<authorUrl>https://fictionlabs.ru</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_RADICALFORM_USERMAIL_DESCRIPTION</description>
+
+	<!-- Language files -->
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_radicalform_usermail.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_radicalform_usermail.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_radicalform_usermail.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_radicalform_usermail.sys.ini</language>
+	</languages>
+
+	<!-- Plugin files -->
+	<files>
+		<filename plugin="usermail">usermail.php</filename>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<!-- Config parameter -->
+	<config>
+		<fields name="params">
+
+			<fieldset name="basic">
+				<field
+                        name="target_id"
+                        type="text"
+                        label="PLG_RADICALFORM_EMAIL_TARGET_ID"
+                        description="PLG_RADICALFORM_EMAIL_TARGET_ID_DESCRIPTION"
+                        required="false"
+                        default=""
+                        size="10"
+                        class="input-xxlarge"
+                        readonly="false"
+                        disabled="false"
+                        filter="">
+                </field>
+				<field
+                        name="email_subject"
+                        type="text"
+                        label="PLG_RADICALFORM_EMAIL_SUBJECT"
+                        description="PLG_RADICALFORM_EMAIL_SUBJECT_DESCRIPTION"
+                        required="false"
+                        default="Спасибо за обращение!"
+                        size="10"
+                        class="input-xxlarge"
+                        readonly="false"
+                        disabled="false"
+                        filter="">
+                </field>
+				<field
+                        name="email_reply"
+                        type="text"
+                        label="PLG_RADICALFORM_EMAIL_REPLY"
+                        description="PLG_RADICALFORM_EMAIL_REPLY_DESCRIPTION"
+                        required="false"
+                        default=""
+                        size="10"
+                        class="input-xxlarge"
+                        readonly="false"
+                        disabled="false"
+                        filter="">
+                </field>
+				<field
+                        name="email_text"
+                        type="editor"
+                        label="PLG_RADICALFORM_EMAIL_TEXT"
+                        description="PLG_RADICALFORM_EMAIL_TEXT_DESCRIPTION"
+                        required="false"
+                        default="Спасибо за обращение, мы его получили и уже готовим ответ."
+                        rows="5"
+                        class="input-xxlarge"
+                        readonly="false"
+                        disabled="false"
+                        filter="safehtml">
+                </field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
